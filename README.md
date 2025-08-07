@@ -76,7 +76,7 @@ This is a **fully interactive knowledge map** of subatomic particles — built f
 
 ---
 
-## 🖼 Screenshots (placeholder)
+## 🖼 Screenshots
 
 | Periodic Table View | Decay Chains | Force Toggles |
 |---------------------|--------------|---------------|
