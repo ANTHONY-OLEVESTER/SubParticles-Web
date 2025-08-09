@@ -7739,66 +7739,66 @@ const particleLifetimes = {
 };
 
 const decayData = {
-  1: [['Muon', 'Muon Neutrino'], ['Electron', 'Electron Neutrino']], // Pion
-  2: [['Muon', 'Muon Neutrino'], ['Pion', 'Pion']], // Kaon
-  3: [['J/psi', 'K (Kaon)'], ['D meson', 'Pion']], // B meson
-  4: [['J/psi', 'Pion']], // Tetraquarks
-  5: [['D meson', 'D meson']], // T (Tetra)
-  6: [['B_c meson', 'Charm']], // Z_bc
-  7: [['J/psi', 'Pion']], // X (Exotic)
-  8: [], // Group: Baryons
-  9: [], // Proton - stable
-  10: [['Proton (p)', 'K (Kaon)', 'Pion']], // Lambda_c
-  11: [['Xi_c', 'Pion']], // Omega_c
-  12: [], // Group: Pentaquarks
-  13: [['J/psi', 'Proton (p)']], // P_uc
-  14: [['J/psi', 'Proton (p)']], // P_sc
+  1: [ // Pion (covers π± and π0 if you don't split types)
+    ['Muon', 'Muon Neutrino'],        // π± → μ + νμ (dominant)
+    ['Electron', 'Electron Neutrino'],// π± → e + νe (rare)
+    ['Photon', 'Photon']              // π0 → γ + γ (dominant)
+  ],
+  2: [['Muon', 'Muon Neutrino'], ['Pion', 'Pion']], // Kaon (simplified)
+  3: [['J/psi', 'K (Kaon)'], ['D meson', 'Pion']], // B meson (example modes)
+  4: [['J/psi', 'Pion']],          // Tetraquarks (generic stand‑in)
+  5: [['D meson', 'D meson']],     // T_cc-like
+  6: [['B_c meson', 'Pion']],      // Z_bc (use hadrons, not bare quarks)
+  7: [['J/psi', 'Pion']],          // X (Exotic)
+  8: [],  // Baryons group
+  9: [],  // Proton (stable)
+  10: [['Proton (p)', 'K (Kaon)', 'Pion']], // Lambda_c (Λ_c)
+  11: [['Xi_c', 'Pion']],          // Omega_c
+  12: [],  // Pentaquarks group
+  13: [['J/psi', 'Proton (p)']],   // P_uc
+  14: [['J/psi', 'Proton (p)']],   // P_sc
   15: [['J/psi', 'Pion', 'Proton (p)']], // Z (Penta)
-  16: [['Lambda_b', 'Charm']], // T_bc
-  17: [], // Up (confined)
-  18: [], // Down
-  19: [], // Charm
-  20: [], // Strange
-  21: [['W boson', 'Bottom']], // Top quark
-  22: [], // Bottom
-  23: [], // Electron - stable
+  16: [['Lambda_b', 'Pion']],      // T_bc (placeholder to hadrons)
+  17: [], 18: [], 19: [], 20: [],  // light quarks (confined)
+  21: [['W boson', 'Bottom']],     // Top → W + b
+  22: [],                          // Bottom (hadronizes first)
+  23: [],                          // Electron (stable)
   24: [['Electron', 'Electron Neutrino', 'Muon Neutrino']], // Muon
-  25: [['Muon', 'Tau Neutrino', 'Muon Neutrino']], // Tau
-  26: [], // Electron Neutrino
-  27: [], // Muon Neutrino
-  28: [], // Tau Neutrino
-  29: [], // Photon - stable
-  30: [], // Gluon - confined
-  31: [['Electron', 'Positron'], ['Muon', 'Anti-Muon'], ['Neutrino', 'Anti-Neutrino']], // Z boson
-  32: [['Electron', 'Electron Neutrino'], ['Muon', 'Muon Neutrino']], // W boson
-  33: [['Bottom', 'Anti-Bottom']], // Higgs boson
-  34: [['Proton (p)', 'Electron', 'Electron Neutrino']], // Neutron
-  35: [], // Deuteron - stable nucleus
-  36: [['Proton (p)', 'Pion']], // Delta Baryons
-  37: [['Lambda_c (Λ)', 'Photon']], // Sigma Baryons
-  38: [['Lambda_c (Λ)', 'Pion']], // Xi Baryons
-  39: [['Lambda_c (Λ)', 'Pion']], // Lambda_b
-  40: [['Xi_c', 'K (Kaon)']], // Omega_b
-  41: [['Lambda_c (Λ)', 'Pion']], // Xi_c
-  42: [['Lambda_c (Λ)', 'Pion']], // Sigma_c
-  43: [['J/psi', 'Muon', 'Neutrino']], // B_c meson
+  25: [['Muon', 'Tau Neutrino', 'Muon Neutrino']],          // Tau
+  26: [], 27: [], 28: [],          // Neutrinos
+  29: [],                          // Photon (stable)
+  30: [],                          // Gluon (confined)
+  31: [['Electron', 'Positron'], ['Muon', 'Anti-Muon'], ['Neutrino', 'Anti-Neutrino']], // Z
+  32: [['Electron', 'Electron Neutrino'], ['Muon', 'Muon Neutrino'], ['Tau', 'Tau Neutrino']], // W
+  33: [['Bottom', 'Anti-Bottom']], // Higgs (simplified dominant)
+  34: [['Proton (p)', 'Electron', 'Electron Anti-Neutrino']], // Neutron (β−)
+  35: [],                          // Deuteron
+  36: [['Proton (p)', 'Pion']],    // Delta baryons (Δ → N + π)
+  37: [['Lambda (Λ)', 'Photon']],  // Sigma baryons (Σ0 → Λ + γ)
+  38: [['Lambda (Λ)', 'Pion']],    // Xi baryons (Ξ → Λ + π)
+  39: [['Lambda_c (Λ)', 'Pion']],  // Lambda_b
+  40: [['Xi_c', 'K (Kaon)']],      // Omega_b (simple stand‑in)
+  41: [['Lambda_c (Λ)', 'Pion']],  // Xi_c (kept simple)
+  42: [['Lambda_c (Λ)', 'Pion']],  // Sigma_c
+  43: [['J/psi', 'Muon', 'Neutrino']], // B_c
   44: [['K (Kaon)', 'Electron', 'Electron Neutrino']], // D meson
-  45: [['Electron', 'Positron']], // J/psi
-  46: [['Muon', 'Anti-Muon']], // Upsilon
-  47: [['Photon', 'Photon']], // Eta mesons
-  48: [['Pion', 'Pion']], // Rho mesons
-  49: [['Kaon', 'Anti-Kaon']], // Phi mesons
-  50: [['Kaon', 'Pion']], // K* mesons
-  51: [['Pion', 'Pion']], // Glueball
-  52: [['Eta mesons', 'Pion']], // Hybrid Meson
-  53: [['J/psi', 'Proton (p)']], // Pentaquark (Other)
-  54: [['J/psi', 'Pion']], // Tetraquark (Other)
-  55: [['J/psi', 'Pion']], // X(3872)
-  56: [['J/psi', 'Pion']], // Z_c(3900)
-  57: [['D meson', 'Pion']], // T_cc
-  58: [['Lambda_c (Λ)', 'Lambda_c (Λ)']], // H-dibaryon (hypothetical)
-  59: [['Electron', 'Positron']] // Dark Photon
+  45: [['Electron', 'Positron']],  // J/psi
+  46: [['Muon', 'Anti-Muon']],     // Upsilon
+  47: [['Photon', 'Photon']],      // Eta mesons
+  48: [['Pion', 'Pion']],          // Rho mesons
+  49: [['Kaon', 'Anti-Kaon']],     // Phi mesons
+  50: [['Kaon', 'Pion']],          // K* mesons
+  51: [['Pion', 'Pion']],          // Glueball (placeholder)
+  52: [['Eta mesons', 'Pion']],    // Hybrid Meson (placeholder)
+  53: [['J/psi', 'Proton (p)']],   // Pentaquark (Other)
+  54: [['J/psi', 'Pion']],         // Tetraquark (Other)
+  55: [['J/psi', 'Pion']],         // X(3872)
+  56: [['J/psi', 'Pion']],         // Z_c(3900)
+  57: [['D meson', 'Pion']],       // T_cc
+  58: [['Lambda (Λ)', 'Lambda (Λ)']], // H‑dibaryon (hypothetical)
+  59: [['Electron', 'Positron']]   // Dark Photon
 };
+
 
 
     // Initialize vis.js network
